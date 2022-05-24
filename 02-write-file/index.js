@@ -1,7 +1,7 @@
 const { stdin, stdout } = process;
 const fs = require('fs');
 const path = require('path');
-
+const os = require('os');
 
 fs.writeFile(
   path.join(__dirname, 'testFile.txt'),
@@ -21,7 +21,7 @@ process.on('SIGINT', function(){
 
 stdin.on('data', data => {
   let name = data.toString();
-  if(name === 'exit\n' || name === 'exit'){
+  if(name === `exit${os.EOL}`){
     console.log('\n Вы захотели выйти из программы. Ну что ж, мы еще встретимся');
     process.exit();
   }
