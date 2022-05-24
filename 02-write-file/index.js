@@ -21,7 +21,7 @@ process.on('SIGINT', function(){
 
 stdin.on('data', data => {
   let name = data.toString();
-  if(name === 'exit\n'){
+  if(name === 'exit\n' || name === 'exit'){
     console.log('\n Вы захотели выйти из программы. Ну что ж, мы еще встретимся');
     process.exit();
   }
